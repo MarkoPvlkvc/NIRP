@@ -3,9 +3,11 @@
 ### Opis skupa podataka
 Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim proizvodima, uključujući voće, povrće, žitarice, meso, mliječne proizvode i prerađene namirnice. Skup podataka pruža detaljne informacije o kalorijama, mastima, proteinima, vitaminima i mineralima, te može poslužiti istraživačima, nutricionistima i ljubiteljima zdravog načina života kao referenca za analizu prehrambenih vrijednosti različitih namirnica.
 
-### Metapodaci
+Creative Commons Attribution 4.0 International 
 
-- **Opis otvorene licencije**: Ovaj skup podataka je licenciran pod [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). To znači da je moguće dijeljenje i prilagođavanje podataka, ali uz obavezno navođenje autora.
+### Metapodaci
+  
+- **Naziv skupa podataka**: Nutritivne informacije različitih proizvoda
   
 - **Naziv autora**: Marko Pavlaković
   
@@ -36,3 +38,5 @@ Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim proizvod
 - **Format podataka**: JSON, CSV
 
 - **Zadnja izmjena**: Listopad 2024.
+
+<p style="text-align: center;">Nutritivne informacije različitih proizvoda © 2024 by Marko Pavlaković licenciran je pod [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). To znači da je moguće dijeljenje i prilagođavanje podataka, ali uz obavezno navođenje autora.</p>

@@ -1,0 +1,21 @@
+id,item_name,brand,serving_size,calories,total_fat,saturated_fat,trans_fat,cholesterol,sodium,total_carbohydrates_total,total_carbohydrates_dietary_fiber,total_carbohydrates_sugars,total_carbohydrates_added_sugars,protein,vitamins_and_minerals_vitamin_a,vitamins_and_minerals_vitamin_c,vitamins_and_minerals_calcium,vitamins_and_minerals_iron,allergens
+71199b96-b61a-41b7-8e1b-ba6b45cec8ee,Apple,,100g,52,0.2g,0g,0g,0mg,1mg,14g,2.4g,10g,0g,0.3g,1%,7%,1%,1%,
+28f1a1d3-1a3d-4bd6-a0dd-ac4ace84393b,Banana,,100g,89,0.3g,0.1g,0g,0mg,1mg,23g,2.6g,12g,5g,1.1g,0%,10%,1%,2%,
+492d4d02-dd5a-4051-a097-eb7017366141,Orange,,100g,47,0.1g,0g,0g,0mg,1mg,12g,2.4g,9g,0g,0.9g,2%,90%,4%,1%,
+8968fe2b-b759-4bb1-b2b4-89685e709e28,Strawberries,,100g,32,0.3g,0g,0g,0mg,1mg,7.7g,2.0g,4.9g,0g,0.7g,1%,58%,1%,1%,
+1cc86219-3e6c-4596-9b9b-6b2fc5dd3ea3,Blueberries,,100g,57,0.3g,0g,0g,0mg,1mg,14.5g,2.4g,10g,0g,0.7g,1%,9%,1%,1%,
+5a156c67-0a1e-4204-8a0b-e6c5cd57fa89,Grapes,,100g,69,0.2g,0g,0g,0mg,1mg,18g,0.9g,16g,0g,0.6g,1%,18%,1%,1%,
+c599c6dc-77b6-4ed8-88f5-bf772664a8cc,Kiwi,,100g,61,0.5g,0.1g,0g,0mg,3mg,15g,3g,9g,0g,1.1g,1%,71%,3%,1%,
+b6e28e29-951e-43be-95b4-f947c4f090d0,Pineapple,,100g,50,0.1g,0g,0g,0mg,1mg,13g,1.4g,10g,0g,0.5g,1%,80%,1%,1%,
+8079da7f-a2dc-40c9-9225-27c962e93f99,Mango,,100g,60,0.4g,0.1g,0g,0mg,1mg,15g,1.6g,14g,0g,0.8g,1%,60%,2%,1%,
+1aa7aee0-450e-438b-a378-42939341b126,Peach,,100g,39,0.3g,0g,0g,0mg,0mg,10g,1.5g,8g,0g,0.9g,1%,6%,1%,1%,
+9b38b541-933a-4e48-b274-b4c165db3aa9,Carrot,,100g,41,0.2g,0g,0g,0mg,69mg,10g,2.8g,5g,0g,0.9g,3%,6%,3%,1%,
+f873b7cd-68d0-4b6d-8237-9ab7c07c8138,Spinach,,100g,23,0.4g,0g,0g,0mg,24mg,3.6g,2.2g,0.4g,0g,2.9g,56%,47%,99%,15%,
+8abad0f0-cb4b-4f9d-a1ae-93d2ad7e8be5,Broccoli,,100g,55,0.6g,0.1g,0g,0mg,33mg,11g,3.8g,1.7g,0g,4.2g,11%,90%,47%,2%,
+65c4c373-623b-406c-a0f5-9a840a4e3d0d,Potato,,100g,77,0.1g,0g,0g,0mg,6mg,17g,2.2g,0.8g,0g,2g,0%,5%,1%,4%,
+83327b3b-5b7a-453d-8f60-9511e9757403,Quinoa,,100g,120,1.9g,0.2g,0g,0mg,5mg,21g,2.8g,0.9g,0g,4.1g,0%,0%,1%,15%,
+a9fdfda4-dada-4641-9402-67c12dc8142f,Almonds,Blue Diamond,28g,164,14g,1g,0g,0mg,1mg,6g,3.5g,1g,0g,6g,0%,0%,7%,6%,almonds
+9461dfce-435e-4215-8f33-7201217aebda,Granola Bar,Healthy Snacks Co.,40g,190,7g,1g,0g,0mg,95mg,29g,3g,10g,8g,5g,0%,2%,4%,6%,peanuts
+ef90a098-fa35-4b0a-be56-0edb11aaa593,Chocolate Bar,Ghirardelli,40g,200,12g,7g,0g,5mg,15mg,24g,1g,18g,16g,2g,0%,0%,2%,8%,milk
+2bd76372-017c-466e-89b0-13a96ad159ad,Cheddar Cheese,,28g,113,9g,6g,0g,28mg,174mg,1g,0g,0g,0%,7g,0%,20%,0%,milk,
+ddd9f6d6-8331-4270-9be6-2010cf1536cc,Yogurt,,150g,100,4g,2g,0g,10mg,60mg,15g,0g,15g,0g,5g,0%,0%,15%,1%,milk

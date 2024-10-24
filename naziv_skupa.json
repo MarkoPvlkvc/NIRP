@@ -1,0 +1,562 @@
+[
+    {
+        "id": "71199b96-b61a-41b7-8e1b-ba6b45cec8ee",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.3g",
+        "calories": 52,
+        "allergens": [
+            null
+        ],
+        "item_name": "Apple",
+        "total_fat": "0.2g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "14g",
+            "sugars": "10g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.4g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "1%",
+            "vitamin_a": "1%",
+            "vitamin_c": "7%"
+        }
+    },
+    {
+        "id": "28f1a1d3-1a3d-4bd6-a0dd-ac4ace84393b",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "1.1g",
+        "calories": 89,
+        "allergens": [
+            null
+        ],
+        "item_name": "Banana",
+        "total_fat": "0.3g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0.1g",
+        "total_carbohydrates": {
+            "total": "23g",
+            "sugars": "12g",
+            "added_sugars": "5g",
+            "dietary_fiber": "2.6g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "2%",
+            "calcium": "1%",
+            "vitamin_a": "0%",
+            "vitamin_c": "10%"
+        }
+    },
+    {
+        "id": "492d4d02-dd5a-4051-a097-eb7017366141",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.9g",
+        "calories": 47,
+        "allergens": [
+            null
+        ],
+        "item_name": "Orange",
+        "total_fat": "0.1g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "12g",
+            "sugars": "9g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.4g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "4%",
+            "vitamin_a": "2%",
+            "vitamin_c": "90%"
+        }
+    },
+    {
+        "id": "8968fe2b-b759-4bb1-b2b4-89685e709e28",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.7g",
+        "calories": 32,
+        "allergens": [
+            null
+        ],
+        "item_name": "Strawberries",
+        "total_fat": "0.3g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "7.7g",
+            "sugars": "4.9g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.0g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "1%",
+            "vitamin_a": "1%",
+            "vitamin_c": "58%"
+        }
+    },
+    {
+        "id": "1cc86219-3e6c-4596-9b9b-6b2fc5dd3ea3",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.7g",
+        "calories": 57,
+        "allergens": [
+            null
+        ],
+        "item_name": "Blueberries",
+        "total_fat": "0.3g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "14.5g",
+            "sugars": "10g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.4g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "1%",
+            "vitamin_a": "1%",
+            "vitamin_c": "9%"
+        }
+    },
+    {
+        "id": "5a156c67-0a1e-4204-8a0b-e6c5cd57fa89",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.6g",
+        "calories": 69,
+        "allergens": [
+            null
+        ],
+        "item_name": "Grapes",
+        "total_fat": "0.2g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "18g",
+            "sugars": "16g",
+            "added_sugars": "0g",
+            "dietary_fiber": "0.9g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "1%",
+            "vitamin_a": "1%",
+            "vitamin_c": "18%"
+        }
+    },
+    {
+        "id": "c599c6dc-77b6-4ed8-88f5-bf772664a8cc",
+        "brand": null,
+        "sodium": "3mg",
+        "protein": "1.1g",
+        "calories": 61,
+        "allergens": [
+            null
+        ],
+        "item_name": "Kiwi",
+        "total_fat": "0.5g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0.1g",
+        "total_carbohydrates": {
+            "total": "15g",
+            "sugars": "9g",
+            "added_sugars": "0g",
+            "dietary_fiber": "3g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "3%",
+            "vitamin_a": "1%",
+            "vitamin_c": "71%"
+        }
+    },
+    {
+        "id": "b6e28e29-951e-43be-95b4-f947c4f090d0",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.5g",
+        "calories": 50,
+        "allergens": [
+            null
+        ],
+        "item_name": "Pineapple",
+        "total_fat": "0.1g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "13g",
+            "sugars": "10g",
+            "added_sugars": "0g",
+            "dietary_fiber": "1.4g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "1%",
+            "vitamin_a": "1%",
+            "vitamin_c": "80%"
+        }
+    },
+    {
+        "id": "8079da7f-a2dc-40c9-9225-27c962e93f99",
+        "brand": null,
+        "sodium": "1mg",
+        "protein": "0.8g",
+        "calories": 60,
+        "allergens": [
+            null
+        ],
+        "item_name": "Mango",
+        "total_fat": "0.4g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0.1g",
+        "total_carbohydrates": {
+            "total": "15g",
+            "sugars": "14g",
+            "added_sugars": "0g",
+            "dietary_fiber": "1.6g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "2%",
+            "vitamin_a": "1%",
+            "vitamin_c": "60%"
+        }
+    },
+    {
+        "id": "1aa7aee0-450e-438b-a378-42939341b126",
+        "brand": null,
+        "sodium": "0mg",
+        "protein": "0.9g",
+        "calories": 39,
+        "allergens": [
+            null
+        ],
+        "item_name": "Peach",
+        "total_fat": "0.3g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "10g",
+            "sugars": "8g",
+            "added_sugars": "0g",
+            "dietary_fiber": "1.5g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "1%",
+            "vitamin_a": "1%",
+            "vitamin_c": "6%"
+        }
+    },
+    {
+        "id": "9b38b541-933a-4e48-b274-b4c165db3aa9",
+        "brand": null,
+        "sodium": "69mg",
+        "protein": "0.9g",
+        "calories": 41,
+        "allergens": [
+            null
+        ],
+        "item_name": "Carrot",
+        "total_fat": "0.2g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "10g",
+            "sugars": "5g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.8g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "3%",
+            "vitamin_a": "3%",
+            "vitamin_c": "6%"
+        }
+    },
+    {
+        "id": "f873b7cd-68d0-4b6d-8237-9ab7c07c8138",
+        "brand": null,
+        "sodium": "24mg",
+        "protein": "2.9g",
+        "calories": 23,
+        "allergens": [
+            null
+        ],
+        "item_name": "Spinach",
+        "total_fat": "0.4g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "3.6g",
+            "sugars": "0.4g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.2g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "15%",
+            "calcium": "99%",
+            "vitamin_a": "56%",
+            "vitamin_c": "47%"
+        }
+    },
+    {
+        "id": "8abad0f0-cb4b-4f9d-a1ae-93d2ad7e8be5",
+        "brand": null,
+        "sodium": "33mg",
+        "protein": "4.2g",
+        "calories": 55,
+        "allergens": [
+            null
+        ],
+        "item_name": "Broccoli",
+        "total_fat": "0.6g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0.1g",
+        "total_carbohydrates": {
+            "total": "11g",
+            "sugars": "1.7g",
+            "added_sugars": "0g",
+            "dietary_fiber": "3.8g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "2%",
+            "calcium": "47%",
+            "vitamin_a": "11%",
+            "vitamin_c": "90%"
+        }
+    },
+    {
+        "id": "65c4c373-623b-406c-a0f5-9a840a4e3d0d",
+        "brand": null,
+        "sodium": "6mg",
+        "protein": "2g",
+        "calories": 77,
+        "allergens": [
+            null
+        ],
+        "item_name": "Potato",
+        "total_fat": "0.1g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0g",
+        "total_carbohydrates": {
+            "total": "17g",
+            "sugars": "0.8g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.2g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "4%",
+            "calcium": "1%",
+            "vitamin_a": "0%",
+            "vitamin_c": "5%"
+        }
+    },
+    {
+        "id": "83327b3b-5b7a-453d-8f60-9511e9757403",
+        "brand": null,
+        "sodium": "5mg",
+        "protein": "4.1g",
+        "calories": 120,
+        "allergens": [
+            null
+        ],
+        "item_name": "Quinoa",
+        "total_fat": "1.9g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "100g",
+        "saturated_fat": "0.2g",
+        "total_carbohydrates": {
+            "total": "21g",
+            "sugars": "0.9g",
+            "added_sugars": "0g",
+            "dietary_fiber": "2.8g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "15%",
+            "calcium": "1%",
+            "vitamin_a": "0%",
+            "vitamin_c": "0%"
+        }
+    },
+    {
+        "id": "a9fdfda4-dada-4641-9402-67c12dc8142f",
+        "brand": "Blue Diamond",
+        "sodium": "1mg",
+        "protein": "6g",
+        "calories": 164,
+        "allergens": [
+            "almonds"
+        ],
+        "item_name": "Almonds",
+        "total_fat": "14g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "28g",
+        "saturated_fat": "1g",
+        "total_carbohydrates": {
+            "total": "6g",
+            "sugars": "1g",
+            "added_sugars": "0g",
+            "dietary_fiber": "3.5g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "6%",
+            "calcium": "7%",
+            "vitamin_a": "0%",
+            "vitamin_c": "0%"
+        }
+    },
+    {
+        "id": "9461dfce-435e-4215-8f33-7201217aebda",
+        "brand": "Healthy Snacks Co.",
+        "sodium": "95mg",
+        "protein": "5g",
+        "calories": 190,
+        "allergens": [
+            "peanuts"
+        ],
+        "item_name": "Granola Bar",
+        "total_fat": "7g",
+        "trans_fat": "0g",
+        "cholesterol": "0mg",
+        "serving_size": "40g",
+        "saturated_fat": "1g",
+        "total_carbohydrates": {
+            "total": "29g",
+            "sugars": "10g",
+            "added_sugars": "8g",
+            "dietary_fiber": "3g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "6%",
+            "calcium": "4%",
+            "vitamin_a": "0%",
+            "vitamin_c": "2%"
+        }
+    },
+    {
+        "id": "ef90a098-fa35-4b0a-be56-0edb11aaa593",
+        "brand": "Ghirardelli",
+        "sodium": "15mg",
+        "protein": "2g",
+        "calories": 200,
+        "allergens": [
+            "milk"
+        ],
+        "item_name": "Chocolate Bar",
+        "total_fat": "12g",
+        "trans_fat": "0g",
+        "cholesterol": "5mg",
+        "serving_size": "40g",
+        "saturated_fat": "7g",
+        "total_carbohydrates": {
+            "total": "24g",
+            "sugars": "18g",
+            "added_sugars": "16g",
+            "dietary_fiber": "1g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "8%",
+            "calcium": "2%",
+            "vitamin_a": "0%",
+            "vitamin_c": "0%"
+        }
+    },
+    {
+        "id": "2bd76372-017c-466e-89b0-13a96ad159ad",
+        "brand": null,
+        "sodium": "174mg",
+        "protein": "7g",
+        "calories": 113,
+        "allergens": [
+            null
+        ],
+        "item_name": "Cheddar Cheese",
+        "total_fat": "9g",
+        "trans_fat": "0g",
+        "cholesterol": "28mg",
+        "serving_size": "28g",
+        "saturated_fat": "6g",
+        "total_carbohydrates": {
+            "total": "1g",
+            "sugars": "0g",
+            "added_sugars": "0%",
+            "dietary_fiber": "0g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "milk",
+            "calcium": "0%",
+            "vitamin_a": "0%",
+            "vitamin_c": "20%"
+        }
+    },
+    {
+        "id": "ddd9f6d6-8331-4270-9be6-2010cf1536cc",
+        "brand": null,
+        "sodium": "60mg",
+        "protein": "5g",
+        "calories": 100,
+        "allergens": [
+            "milk"
+        ],
+        "item_name": "Yogurt",
+        "total_fat": "4g",
+        "trans_fat": "0g",
+        "cholesterol": "10mg",
+        "serving_size": "150g",
+        "saturated_fat": "2g",
+        "total_carbohydrates": {
+            "total": "15g",
+            "sugars": "15g",
+            "added_sugars": "0g",
+            "dietary_fiber": "0g"
+        },
+        "vitamins_and_minerals": {
+            "iron": "1%",
+            "calcium": "15%",
+            "vitamin_a": "0%",
+            "vitamin_c": "0%"
+        }
+    }
+]

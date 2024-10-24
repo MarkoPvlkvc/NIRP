@@ -1,0 +1,13 @@
+name: orbazacompose
+
+services:
+  postgres:
+    build: .
+    container_name: ORBaza
+    ports:
+      - "5435:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

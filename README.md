@@ -19,7 +19,6 @@ Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime ć
 ## Metapodaci
   
 - **Naziv skupa podataka**: Nutritivne informacije različitih proizvoda
-  
 - **Naziv autora**: Marko Pavlaković
   
 - **Verzija skupa podataka**: 1.0

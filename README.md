@@ -39,4 +39,5 @@ Creative Commons Attribution 4.0 International
 
 - **Zadnja izmjena**: Listopad 2024.
 
-<p style="text-align: center;">Nutritivne informacije različitih proizvoda © 2024 by Marko Pavlaković licenciran je pod [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). To znači da je moguće dijeljenje i prilagođavanje podataka, ali uz obavezno navođenje autora.</p>
+
+Nutritivne informacije različitih proizvoda © 2024 by Marko Pavlaković licenciran je pod [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). To znači da je moguće dijeljenje i prilagođavanje podataka, ali uz obavezno navođenje autora.

@@ -1,6 +1,6 @@
 <h1 align="center">Nutritivne informacije raznih proizvoda</h1>
 
-## Opis skupa podataka
+### Opis skupa podataka
 Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim proizvodima, uključujući voće, povrće, žitarice, meso, mliječne proizvode i prerađene namirnice. Skup podataka pruža detaljne informacije o kalorijama, mastima, proteinima, vitaminima i mineralima, te može poslužiti istraživačima, nutricionistima i ljubiteljima zdravog načina života kao referenca za analizu prehrambenih vrijednosti različitih namirnica.
 
 ## Početak rada

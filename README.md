@@ -20,11 +20,8 @@ Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime ć
   
 - **Naziv skupa podataka**: Nutritivne informacije različitih proizvoda
 - **Naziv autora**: Marko Pavlaković
-  
 - **Verzija skupa podataka**: 1.0
-  
 - **Jezik**: Engleski
-  
 - **Opis atributa**:
   - `id`: Jedinstveni identifikator za svaki unos (UUID)
   - `item_name`: Naziv namirnice (npr. "Jabuka", "Kruh", "Piletina")
@@ -40,13 +37,9 @@ Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime ć
   - `protein`: Količina proteina po porciji
   - `vitamins_and_minerals`: Postotak preporučenog dnevnog unosa vitamina i minerala
   - `allergens`: Informacije o alergenima (npr. "orasi", "mlijeko")
-
 - **Izvor skupa podataka**: Ovaj skup podataka je prikupljen iz javnih prehrambenih baza podataka i istraživačkih radova.
-
 - **Datum prikupljanja podataka**: Listopad 2024.
-
 - **Format podataka**: JSON, CSV
-
 - **Zadnja izmjena**: Listopad 2024.
 
 <br>

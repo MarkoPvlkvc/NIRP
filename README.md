@@ -47,7 +47,7 @@ Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime ć
 
 <p align="center">
   <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/">
-  <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" />
+  <img alt="Creative Commons License" style="border-width:0; width: 125px;" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" />
 </a><br />
 Nutritivne informacije različitih proizvoda © 2024 by Marko Pavlaković licenciran je pod
 <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1">

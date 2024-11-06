@@ -1,0 +1,136 @@
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #424242;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #686868;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7b7b7b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: hsl(0, 0%, 90%);
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  min-height: 100dvh;
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 128px 0 32px 0;
+}
+
+.list-item-key {
+  font-weight: 500;
+  color: hsl(0, 0%, 90%);
+}
+
+.attribute-list-item-key {
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 20%);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.button-primary {
+  height: min-content;
+  outline: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 80%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+}
+.button-primary:hover {
+  border-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 90%);
+}
+
+.button-secondary {
+  height: min-content;
+  outline: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 2px solid hsl(0, 0%, 20%);
+  background-color: transparent;
+  color: hsl(0, 0%, 80%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+}
+.button-secondary:hover {
+  border-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 90%);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1.5px solid hsl(0, 0%, 20%);
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 15%);
+}
+
+tr:nth-child(n + 3):nth-child(odd) {
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 15%);
+}
+
+input {
+  height: min-content;
+  border-radius: 8px;
+  outline: transparent;
+  background-color: transparent;
+  color: hsl(0, 0%, 90%);
+  border: 2px solid hsl(0, 0%, 20%);
+  padding: 6px 10px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  caret-color: hsl(0, 0%, 60%);
+}
+input::placeholder {
+  color: hsl(0, 0%, 60%);
+  transition: all 0.2s ease-in-out;
+}
+input:hover:not(:focus)::placeholder {
+  color: hsl(0, 0%, 90%);
+}
+input:focus {
+  border-color: hsl(0, 0%, 90%);
+}

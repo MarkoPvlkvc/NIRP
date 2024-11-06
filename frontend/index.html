@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NIRP - Index</title>
+    <meta
+      name="description"
+      content="Ovaj skup podataka sadrži nutritivne
+    informacije o raznim prehrambenim proizvodima, uključujući voće, povrće,
+    žitarice, meso, mliječne proizvode i prerađene namirnice." />
+    <meta
+      name="keywords"
+      content="nutritivne informacije, prehrambeni proizvodi, nirp" />
+    <meta name="author" content="Marko Pavlaković" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          width: 100%;
+          display: flex;
+          justify-content: end;
+          gap: 8px;
+          padding: 24px;
+          box-sizing: border-box;
+        ">
+        <button
+          class="button-secondary"
+          onclick="window.location.href='/database'">
+          Pregled Baze
+        </button>
+        <button
+          class="button-primary"
+          onclick="document.getElementById('download-section').scrollIntoView({ behavior: 'smooth' });">
+          Preuzimanje
+        </button>
+      </div>
+
+      <h1 style="font-weight: 400; color: hsl(0, 0%, 60%)">
+        <span style="font-weight: bold; color: hsl(0, 0%, 90%)">N</span
+        >utritivne
+        <span style="font-weight: bold; color: hsl(0, 0%, 90%)">I</span
+        >nformacije
+        <span style="font-weight: bold; color: hsl(0, 0%, 90%)">R</span>aznih
+        <span style="font-weight: bold; color: hsl(0, 0%, 90%)">P</span>roizvoda
+      </h1>
+
+      <div style="max-width: 768px; width: 100%; margin-top: 64px">
+        <h2>Opis skupa podataka</h2>
+        <p style="margin-top: 16px; color: hsl(0, 0%, 60%)">
+          Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim
+          proizvodima, uključujući voće, povrće, žitarice, meso, mliječne
+          proizvode i prerađene namirnice. Skup podataka pruža detaljne
+          informacije o kalorijama, mastima, proteinima, vitaminima i
+          mineralima, te može poslužiti istraživačima, nutricionistima i
+          ljubiteljima zdravog načina života kao referenca za analizu
+          prehrambenih vrijednosti različitih namirnica.
+        </p>
+      </div>
+
+      <div style="max-width: 768px; width: 100%; margin-top: 64px">
+        <h2>Metapodaci</h2>
+        <ul style="margin-top: 16px; color: hsl(0, 0%, 60%); line-height: 26px">
+          <li>
+            <span class="list-item-key">Naziv skupa podataka: </span>Nutritivne
+            informacije različitih proizvoda
+          </li>
+          <li>
+            <span class="list-item-key">Naziv autora: </span>Marko Pavlaković
+          </li>
+          <li><span class="list-item-key">Jezik: </span>Engleski</li>
+          <li>
+            <span class="list-item-key">Opis atributa: </span>
+
+            <ul>
+              <li>
+                <span class="attribute-list-item-key">id</span>
+                - Jedinstveni identifikator za svaki unos (UUID)
+              </li>
+              <li>
+                <span class="attribute-list-item-key">item_name</span>
+                - Naziv namirnice (npr. "Jabuka", "Kruh", "Piletina")
+              </li>
+              <li>
+                <span class="attribute-list-item-key">brand</span>
+                - Marka proizvoda (ako je primjenjivo)
+              </li>
+              <li>
+                <span class="attribute-list-item-key">serving_size</span>
+                - Veličina porcije (npr. "100g")
+              </li>
+              <li>
+                <span class="attribute-list-item-key">calories</span>
+                - Ukupne kalorije po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key">total_fat</span>
+                - Ukupna količina masti po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key">saturated_fat</span>
+                - Količina zasićenih masti po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key">trans_fat</span>
+                - Količina trans masti po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key">cholesterol</span>
+                - Količina kolesterola po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key">sodium</span>
+                - Količina natrija po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key">total_carbohydrates</span>
+                - Ukupni ugljikohidrati po porciji (s podacima o dijetalnim
+                vlaknima i šećerima)
+              </li>
+              <li>
+                <span class="attribute-list-item-key">protein</span>
+                - Količina proteina po porciji
+              </li>
+              <li>
+                <span class="attribute-list-item-key"
+                  >vitamins_and_minerals</span
+                >
+                - Postotak preporučenog dnevnog unosa vitamina i minerala
+              </li>
+              <li>
+                <span class="attribute-list-item-key">allergens</span>
+                - Informacije o alergenima (npr. "orasi", "mlijeko")
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="list-item-key">Izvor skupa podataka: </span>Ovaj skup
+            podataka je prikupljen iz javnih prehrambenih baza podataka i
+            istraživačkih radova.
+          </li>
+          <li>
+            <span class="list-item-key">Datum prikupljanja podataka: </span
+            >Listopad 2024.
+          </li>
+          <li><span class="list-item-key">Format podataka: </span>JSON, CSV</li>
+        </ul>
+      </div>
+
+      <div
+        id="download-section"
+        style="max-width: 768px; width: 100%; margin-top: 64px">
+        <h2>Preuzimanje podataka</h2>
+        <p style="margin-top: 16px; color: hsl(0, 0%, 60%)">
+          Nakon preusmjeravanja datoteku je moguće preuzeti sa&nbsp;
+          <span class="attribute-list-item-key">desni klik -> Save as...</span>
+        </p>
+
+        <div style="width: min-content">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 32px;
+              gap: 24px;
+            ">
+            <p>JSON</p>
+            <button
+              class="button-primary"
+              onclick="window.open('https://raw.githubusercontent.com/MarkoPvlkvc/NIRP/refs/heads/master/naziv_skupa.json', '_blank');">
+              Preuzmi
+            </button>
+          </div>
+          <div
+            style="
+              width: 100%;
+              height: 1.5px;
+              background-color: hsl(0, 0%, 15%);
+              border-radius: 9999px;
+              margin: 10px 0;
+            "></div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 8px;
+              gap: 24px;
+            ">
+            <p>CSV</p>
+            <button
+              class="button-primary"
+              onclick="window.open('https://raw.githubusercontent.com/MarkoPvlkvc/NIRP/refs/heads/master/naziv_skupa.csv', '_blank');">
+              Preuzmi
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 128px">
+        <p style="text-align: center">
+          <a
+            rel="license"
+            href="https://creativecommons.org/publicdomain/zero/1.0/">
+            <img
+              alt="Creative Commons License"
+              style="border-width: 0; width: 100px; margin-bottom: 8px"
+              src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" /> </a
+          ><br />
+          Nutritivne informacije različitih proizvoda © 2024 by Marko Pavlaković
+          licenciran je pod
+          <a
+            rel="license"
+            href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1"
+            style="color: hsl(0, 0%, 90%)">
+            CC0 1.0
+          </a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -25,6 +25,22 @@
   </head>
   <body>
     <div class="container">
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          width: 100%;
+          display: flex;
+          justify-content: start;
+          gap: 8px;
+          padding: 24px;
+          box-sizing: border-box;
+        ">
+        <button class="button-secondary" onclick="window.location.href='/'">
+          Natrag
+        </button>
+      </div>
+
       <h1>Pregled Baze</h1>
 
       <div
@@ -33,30 +49,33 @@
           margin-top: 64px;
           display: flex;
           justify-content: end;
-          align-items: end;
+          align-items: center;
           gap: 6px;
           padding: 0 36px;
           box-sizing: border-box;
         ">
-        <div style="display: flex; gap: 4px">
-          <p
-            style="
-              color: hsl(0, 0%, 60%);
-              align-content: center;
-              font-size: 14px;
-            ">
-            Polja za pretragu:
-          </p>
+        <p
+          style="
+            color: hsl(0, 0%, 60%);
+            align-content: center;
+            font-size: 14px;
+          ">
+          Polje za pretragu:
+        </p>
+        <div style="position: relative">
           <button
             id="search-key"
             class="button-secondary"
             style="
+              position: relative;
+              min-width: 160px;
               border-color: transparent;
               background-color: hsl(0, 0%, 15%);
               display: flex;
               align-items: center;
-              justify-content: center;
+              justify-content: space-between;
               gap: 6px;
+              z-index: 20;
             ">
             Sva polja (wildcard)
             <span
@@ -68,8 +87,107 @@
               >▶</span
             >
           </button>
+
+          <div
+            id="search-key-radio-container"
+            class="search-key-radio-container closed">
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-all"
+              value="Sva polja (wildcard)" />
+            <label for="search-key-radio-all">Sva polja (wildcard)</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-id"
+              value="id" />
+            <label for="search-key-radio-id">id</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-item_name"
+              value="item_name" />
+            <label for="search-key-radio-item_name">item_name</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-brand"
+              value="brand" />
+            <label for="search-key-radio-brand">brand</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-serving_size"
+              value="serving_size" />
+            <label for="search-key-radio-serving_size">serving_size</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-calories"
+              value="calories" />
+            <label for="search-key-radio-calories">calories</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-total_fat"
+              value="total_fat" />
+            <label for="search-key-radio-total_fat">total_fat</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-saturated_fat"
+              value="saturated_fat" />
+            <label for="search-key-radio-saturated_fat">saturated_fat</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-trans_fat"
+              value="trans_fat" />
+            <label for="search-key-radio-trans_fat">trans_fat</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-cholesterol"
+              value="cholesterol" />
+            <label for="search-key-radio-cholesterol">cholesterol</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-sodium"
+              value="sodium" />
+            <label for="search-key-radio-sodium">sodium</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-total_carbohydrates"
+              value="total_carbohydrates" />
+            <label for="search-key-radio-total_carbohydrates"
+              >total_carbohydrates</label
+            >
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-protein"
+              value="protein" />
+            <label for="search-key-radio-protein">protein</label>
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-vitamins_and_minerals"
+              value="vitamins_and_minerals" />
+            <label for="search-key-radio-vitamins_and_minerals"
+              >vitamins_and_minerals</label
+            >
+            <input
+              type="radio"
+              name="search-key-radio"
+              id="search-key-radio-allergens"
+              value="allergens" />
+            <label for="search-key-radio-allergens">allergens</label>
+          </div>
         </div>
-        <input type="text" placeholder="Pretraži..." />
+        <input id="search-key-input" type="text" placeholder="Pretraži..." />
         <button class="button-primary" style="margin-left: 8px">
           Preuzmi Selekciju
         </button>

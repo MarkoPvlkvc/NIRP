@@ -37,6 +37,7 @@ p {
 
 .container {
   min-height: 100dvh;
+  position: relative;
   background-color: hsl(0, 0%, 10%);
   display: flex;
   flex-direction: column;
@@ -133,4 +134,46 @@ input:hover:not(:focus)::placeholder {
 }
 input:focus {
   border-color: hsl(0, 0%, 90%);
+}
+
+.search-key-radio-container {
+  max-height: 256px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: hsl(0, 0%, 20%);
+  padding: 16px 0;
+  margin-top: 4px;
+  border-radius: 8px;
+  z-index: 10;
+  white-space: nowrap;
+  overflow: auto;
+}
+.search-key-radio-container.closed {
+  display: none;
+}
+.search-key-radio-container::-webkit-scrollbar {
+  width: 5px;
+}
+.search-key-radio-container input[type="radio"] {
+  display: none;
+}
+.search-key-radio-container label {
+  padding: 8px 20px;
+  color: hsl(0, 0%, 80%);
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.search-key-radio-container input[type="radio"]:not(:checked) + label:hover {
+  background-color: hsl(0, 0%, 25%);
+  color: hsl(0, 0%, 90%);
+}
+.search-key-radio-container input[type="radio"]:checked + label {
+  background-color: hsl(0, 0%, 30%);
+  text-decoration-color: hsl(0, 0%, 60%);
 }

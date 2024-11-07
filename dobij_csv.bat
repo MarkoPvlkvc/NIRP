@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set OUTPUT_FILE=%~dp0naziv_skupa.csv
+set OUTPUT_FILE=%~dp0NIRP.csv
 
 docker exec -u postgres ORBaza psql -d ORBaza -c ^"COPY ( ^
     SELECT ^

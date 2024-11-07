@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set OUTPUT_FILE=%~dp0naziv_skupa.json
+set OUTPUT_FILE=%~dp0NIRP.json
 
 docker exec -u postgres ORBaza psql -d ORBaza -t -A -c ^" ^
     SELECT jsonb_pretty(jsonb_agg(result)) ^

@@ -16,7 +16,7 @@ docker compose up
 
 Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime će se stvoriti nove datoteke `naziv_skupa.json` i `naziv_skupa.csv`.
 <br><br>
-Isto tako, moguće je pregledati podatke skupa na: <a href="http://localhost:3000" target="_blank">`http://localhost:3000`</a>
+Isto tako, moguće je pregledati podatke skupa na: [`http://localhost:3000`](http://localhost:3000)
 
 <br>
 

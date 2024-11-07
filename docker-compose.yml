@@ -8,6 +8,13 @@ services:
       - "5435:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+  backend:
+    build: ./backend
+    container_name: ORBackend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
 
 volumes:
   db_data:

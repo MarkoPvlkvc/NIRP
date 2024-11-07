@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const pg_1 = require("pg");
+const dotenv_1 = __importDefault(require("dotenv"));
 const SERVER_PORT = 3000;
+dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.static(path_1.default.join(__dirname, "../../frontend")));
 const pool = new pg_1.Pool({
     user: "postgres",
-    host: "localhost",
+    host: process.env.DB_HOST || "localhost",
     database: "ORBaza",
     password: "123456",
     port: 5432,

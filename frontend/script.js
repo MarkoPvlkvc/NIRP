@@ -258,8 +258,14 @@ function convertTableToJSON() {
     "cholesterol",
     "sodium",
     "total_carbohydrates",
+    "",
+    "",
+    "",
     "protein",
     "vitamins_and_minerals",
+    "",
+    "",
+    "",
     "allergens",
   ];
 
@@ -277,37 +283,36 @@ function convertTableToJSON() {
     let vitaminsAndMinerals = {};
 
     // Loop through each column and map it to the JSON object based on the headers
-    columns.forEach((column, colIndex) => {
+    for (let colIndex = 0; colIndex < columns.length; colIndex++) {
       const header = headers[colIndex];
-      const cellValue = column.textContent.trim();
+      const cellValue = columns[colIndex].textContent.trim();
 
       if (header === "total_carbohydrates") {
-        carbohydrates = {
-          total: columns[colIndex + 1]?.textContent.trim(),
-          sugars: columns[colIndex + 2]?.textContent.trim(),
-          added_sugars: columns[colIndex + 3]?.textContent.trim(),
-          dietary_fiber: columns[colIndex + 4]?.textContent.trim(),
+        const carbohydrates = {
+          total: columns[colIndex]?.textContent.trim(),
+          sugars: columns[colIndex + 1]?.textContent.trim(),
+          added_sugars: columns[colIndex + 2]?.textContent.trim(),
+          dietary_fiber: columns[colIndex + 3]?.textContent.trim(),
         };
-        colIndex += 4; // Skip over the carbohydrate columns
+        colIndex += 3; // Increment by 3 to skip over carbohydrate columns
         jsonObject[header] = carbohydrates;
       } else if (header === "vitamins_and_minerals") {
-        vitaminsAndMinerals = {
-          iron: columns[colIndex + 1]?.textContent.trim(),
-          calcium: columns[colIndex + 2]?.textContent.trim(),
-          vitamin_a: columns[colIndex + 3]?.textContent.trim(),
-          vitamin_c: columns[colIndex + 4]?.textContent.trim(),
+        const vitaminsAndMinerals = {
+          iron: columns[colIndex]?.textContent.trim(),
+          calcium: columns[colIndex + 1]?.textContent.trim(),
+          vitamin_a: columns[colIndex + 2]?.textContent.trim(),
+          vitamin_c: columns[colIndex + 3]?.textContent.trim(),
         };
-        colIndex += 4; // Skip over the vitamins columns
+        colIndex += 3; // Increment by 3 to skip over vitamins columns
         jsonObject[header] = vitaminsAndMinerals;
       } else if (header === "allergens") {
-        // Assuming allergens are listed as a comma-separated list, you can split them into an array
         jsonObject[header] = cellValue
           ? cellValue.split(",").map((item) => item.trim())
           : null;
-      } else if (header != undefined) {
-        jsonObject[header] = cellValue || null; // For other columns, just map the text
+      } else {
+        jsonObject[header] = cellValue || null; // Default case for other columns
       }
-    });
+    }
 
     // Push the structured JSON object for this row to the array
     jsonArray.push(jsonObject);

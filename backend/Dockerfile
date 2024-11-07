@@ -2,12 +2,14 @@ FROM node:16-alpine
 
 WORKDIR /app
 
-COPY ../package.json ../package-lock.json ./
+COPY ./package.json ./package-lock.json ./
 
 RUN npm install
 
-COPY dist ./dist
+COPY ./backend/dist ./backend/dist
+
+COPY ./frontend ./frontend
 
 EXPOSE 3000
 
-CMD ["node", "dist/server.js"]
+CMD ["node", "backend/dist/server.js"]

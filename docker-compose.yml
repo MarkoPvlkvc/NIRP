@@ -9,12 +9,16 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   backend:
-    build: ./backend
-    container_name: ORBackend
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    container_name: ORClient
     ports:
       - "3000:3000"
     depends_on:
       - postgres
+    environment:
+      - DB_HOST=postgres
 
 volumes:
   db_data:

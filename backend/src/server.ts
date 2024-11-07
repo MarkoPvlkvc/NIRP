@@ -1,15 +1,18 @@
 import express from "express";
 import path from "path";
 import { Pool } from "pg";
+import dotenv from "dotenv";
 
 const SERVER_PORT = 3000;
+
+dotenv.config();
 
 const app = express();
 app.use(express.static(path.join(__dirname, "../../frontend")));
 
 const pool = new Pool({
   user: "postgres",
-  host: "localhost",
+  host: process.env.DB_HOST || "localhost",
   database: "ORBaza",
   password: "123456",
   port: 5432,

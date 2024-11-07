@@ -174,13 +174,11 @@ function filterTable(filter, currentRadioButton) {
       } else {
         // Search only the column corresponding to the selected radio button
         const columnIndex = getColumnIndexByHeader(currentRadioButton); // Assume this function maps header to column index
-        console.log(columnIndex);
         if (
           columns[columnIndex] &&
           columns[columnIndex].textContent.toLowerCase().includes(filter)
         ) {
           matchFound = true;
-          console.log("matchFound");
         }
       }
     }
@@ -239,4 +237,105 @@ function getColumnIndexByHeader(header) {
   // Map the header string to column index
   const headerIndex = headers.indexOf(header);
   return headerIndex >= 0 ? headerIndex : null;
+}
+
+// Function to convert the displayed table rows to an array of JSON objects
+function convertTableToJSON() {
+  const table = document.getElementById("table"); // replace with your actual table ID
+  const rows = table.querySelectorAll("tr");
+  const jsonArray = [];
+
+  // Headers to map each column to a specific key in the JSON object
+  const headers = [
+    "id",
+    "item_name",
+    "brand",
+    "serving_size",
+    "calories",
+    "total_fat",
+    "saturated_fat",
+    "trans_fat",
+    "cholesterol",
+    "sodium",
+    "total_carbohydrates",
+    "protein",
+    "vitamins_and_minerals",
+    "allergens",
+  ];
+
+  // Loop through all rows (skip the header row)
+  rows.forEach((row, rowIndex) => {
+    // Skip the header row and any hidden rows (those with display: none)
+    if (rowIndex === 0 || rowIndex === 1 || row.style.display === "none")
+      return;
+
+    const columns = row.querySelectorAll("td");
+    const jsonObject = {};
+
+    // Create a structure to hold carbohydrates and vitamins & minerals objects
+    let carbohydrates = {};
+    let vitaminsAndMinerals = {};
+
+    // Loop through each column and map it to the JSON object based on the headers
+    columns.forEach((column, colIndex) => {
+      const header = headers[colIndex];
+      const cellValue = column.textContent.trim();
+
+      if (header === "total_carbohydrates") {
+        carbohydrates = {
+          total: columns[colIndex + 1]?.textContent.trim(),
+          sugars: columns[colIndex + 2]?.textContent.trim(),
+          added_sugars: columns[colIndex + 3]?.textContent.trim(),
+          dietary_fiber: columns[colIndex + 4]?.textContent.trim(),
+        };
+        colIndex += 4; // Skip over the carbohydrate columns
+        jsonObject[header] = carbohydrates;
+      } else if (header === "vitamins_and_minerals") {
+        vitaminsAndMinerals = {
+          iron: columns[colIndex + 1]?.textContent.trim(),
+          calcium: columns[colIndex + 2]?.textContent.trim(),
+          vitamin_a: columns[colIndex + 3]?.textContent.trim(),
+          vitamin_c: columns[colIndex + 4]?.textContent.trim(),
+        };
+        colIndex += 4; // Skip over the vitamins columns
+        jsonObject[header] = vitaminsAndMinerals;
+      } else if (header === "allergens") {
+        // Assuming allergens are listed as a comma-separated list, you can split them into an array
+        jsonObject[header] = cellValue
+          ? cellValue.split(",").map((item) => item.trim())
+          : null;
+      } else if (header != undefined) {
+        jsonObject[header] = cellValue || null; // For other columns, just map the text
+      }
+    });
+
+    // Push the structured JSON object for this row to the array
+    jsonArray.push(jsonObject);
+  });
+
+  // Return the array of JSON objects
+  return jsonArray;
+}
+
+// Function to convert the table data to JSON and trigger download
+function downloadJSON(data, filename = "NIRP_selected.json") {
+  // Convert the data to a JSON string
+  const jsonString = JSON.stringify(data, null, 2); // pretty-print with indentation
+
+  // Create a Blob from the JSON string
+  const blob = new Blob([jsonString], { type: "application/json" });
+
+  // Create an invisible link element to trigger the download
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+
+  // Append the link to the document body (required for Firefox)
+  document.body.appendChild(link);
+
+  // Programmatically click the link to trigger the download
+  link.click();
+
+  // Remove the link after triggering the download
+  document.body.removeChild(link);
 }

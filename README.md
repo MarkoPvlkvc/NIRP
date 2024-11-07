@@ -1,6 +1,7 @@
 <h1 align="center">Nutritivne informacije raznih proizvoda</h1>
 
 ### Opis skupa podataka
+
 Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim proizvodima, uključujući voće, povrće, žitarice, meso, mliječne proizvode i prerađene namirnice. Skup podataka pruža detaljne informacije o kalorijama, mastima, proteinima, vitaminima i mineralima, te može poslužiti istraživačima, nutricionistima i ljubiteljima zdravog načina života kao referenca za analizu prehrambenih vrijednosti različitih namirnica.
 
 <br>
@@ -8,6 +9,7 @@ Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim proizvod
 ## Početak rada
 
 Prvo je potrebno pokrenuti Docker kontejner:
+
 ```bash
 docker compose up
 ```
@@ -17,7 +19,7 @@ Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime ć
 <br>
 
 ## Metapodaci
-  
+
 - **Naziv skupa podataka**: Nutritivne informacije različitih proizvoda
 - **Naziv autora**: Marko Pavlaković
 - **Verzija skupa podataka**: 1.0
@@ -37,7 +39,7 @@ Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime ć
   - `protein`: Količina proteina po porciji
   - `vitamins_and_minerals`: Postotak preporučenog dnevnog unosa vitamina i minerala
   - `allergens`: Informacije o alergenima (npr. "orasi", "mlijeko")
-- **Izvor skupa podataka**: Ovaj skup podataka je prikupljen iz javnih prehrambenih baza podataka i istraživačkih radova.
+- **Izvor skupa podataka**: Ovaj skup podataka je prikupljen iz javnih prehrambenih baza podataka i istraživačkih radova
 - **Datum prikupljanja podataka**: Listopad 2024.
 - **Format podataka**: JSON, CSV
 - **Zadnja izmjena**: Listopad 2024.

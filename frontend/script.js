@@ -1,16 +1,18 @@
 window.onload = async () => {
   const table = document.getElementById("table");
 
-  const response = await fetch("/api/get_data");
+  const response = await fetch("/api/v1/get_items");
   const data = await response.json();
 
-  data.forEach((row) => {
+  data.response.forEach((row) => {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
-      <td title=${
+      <td onclick="navigator.clipboard.writeText('${
         row.id
-      } style="max-width: 8ch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${
+      }'); alert('id copied to clipboard!');" title=${
+      row.id
+    } style="max-width: 8ch; white-space: nowrap; cursor: pointer; overflow: hidden; text-overflow: ellipsis;">${
       row.id
     }</td>
       <td>${row.item_name}</td>

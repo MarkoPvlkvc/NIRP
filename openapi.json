@@ -1,0 +1,630 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "NIRP API",
+    "description": "An API that contains nutritional information on various products, including fruits, vegetables, cereals, meat, dairy products and processed foods. The data set provides detailed information on calories, fats, proteins, vitamins and minerals, and can serve researchers, nutritionists and to fans of healthy lifestyle as a reference for analysis nutritional values of different foods.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Marko Pavlakovic",
+      "url": "https://github.com/MarkoPvlkvc/"
+    },
+    "license": {
+      "name": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "single",
+      "description": "Returns a single item in response"
+    },
+    {
+      "name": "collection",
+      "description": "Returns a collection of items in response"
+    }
+  ],
+  "paths": {
+    "/get_items": {
+      "get": {
+        "tags": [
+          "collection"
+        ],
+        "summary": "Fetch all data from database",
+        "description": "Fetch all database items which can be seen on the /database endpoint.",
+        "responses": {
+          "200": {
+            "description": "Fetched all data from database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No data found in database"
+          },
+          "500": {
+            "description": "Failed to retrieve data from the database"
+          }
+        }
+      }
+    },
+    "/get_items/{id}": {
+      "get": {
+        "tags": [
+          "single"
+        ],
+        "summary": "Fetch a specific item by ID",
+        "description": "Retrieves a single item from the database based on its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the item to retrieve.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "validItem1": {
+                "summary": "A valid ID for an existing item",
+                "value": "71199b96-b61a-41b7-8e1b-ba6b45cec8ee"
+              },
+              "validItem2": {
+                "summary": "Another valid ID for an existing item",
+                "value": "28f1a1d3-1a3d-4bd6-a0dd-ac4ace84393b"
+              },
+              "edgeCaseItem": {
+                "summary": "And another valid ID for an existing item",
+                "value": "492d4d02-dd5a-4051-a097-eb7017366141"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Item not found"
+          },
+          "500": {
+            "description": "Failed to retrieve the item"
+          }
+        }
+      }
+    },
+    "/get_items_with_allergens/{allergen}": {
+      "get": {
+        "summary": "Fetch all items with a certain allergen",
+        "description": "Retrieves all items from the database based on the allergen.",
+        "parameters": [
+          {
+            "name": "allergen",
+            "in": "path",
+            "required": true,
+            "description": "The allergen of the item to retrieve",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "validItem1": {
+                "summary": "A valid ID for an existing item",
+                "value": "milk"
+              },
+              "validItem2": {
+                "summary": "Another valid ID for an existing item",
+                "value": "peanuts"
+              },
+              "edgeCaseItem": {
+                "summary": "And another valid ID for an existing item",
+                "value": "almonds"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the items",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Items not found"
+          },
+          "500": {
+            "description": "Failed to retrieve the items"
+          }
+        }
+      }
+    },
+    "/get_items_with_serving_size/{serving_size}": {
+      "get": {
+        "summary": "Fetch all items with a certain serving size",
+        "description": "Retrieves all items from the database based on the serving size.",
+        "parameters": [
+          {
+            "name": "serving_size",
+            "in": "path",
+            "required": true,
+            "description": "The serving_size of the item to retrieve",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "validItem1": {
+                "summary": "A valid ID for an existing item",
+                "value": "100"
+              },
+              "validItem2": {
+                "summary": "Another valid ID for an existing item",
+                "value": "40"
+              },
+              "edgeCaseItem": {
+                "summary": "And another valid ID for an existing item",
+                "value": "28"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the items",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Items not found"
+          },
+          "500": {
+            "description": "Failed to retrieve the items"
+          }
+        }
+      }
+    },
+    "/get_items_with_no_cholesterol": {
+      "get": {
+        "summary": "Fetch all items with no cholesterol",
+        "description": "Retrieves all items from the database with no cholesterol",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the items",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Items not found"
+          },
+          "500": {
+            "description": "Failed to retrieve the items"
+          }
+        }
+      }
+    },
+    "/add_item": {
+      "post": {
+        "tags": [
+          "single"
+        ],
+        "summary": "Add a new item to the database",
+        "description": "Adds a new item with complete nutritional information to the database.",
+        "requestBody": {
+          "description": "The item to add",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Item"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully added the item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemAddedWrapper"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input data"
+          },
+          "500": {
+            "description": "Failed to add the item"
+          }
+        }
+      }
+    },
+    "/update_item/{id}": {
+      "put": {
+        "tags": [
+          "single"
+        ],
+        "summary": "Update an item by ID",
+        "description": "Updates the details of an existing item in the database.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the item to update.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "validItem1": {
+                "summary": "A valid ID for an existing item",
+                "value": "71199b96-b61a-41b7-8e1b-ba6b45cec8ee"
+              },
+              "validItem2": {
+                "summary": "Another valid ID for an existing item",
+                "value": "28f1a1d3-1a3d-4bd6-a0dd-ac4ace84393b"
+              },
+              "edgeCaseItem": {
+                "summary": "And another valid ID for an existing item",
+                "value": "492d4d02-dd5a-4051-a097-eb7017366141"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The updated item data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Item"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated the item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemUpdatedWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Item not found"
+          },
+          "500": {
+            "description": "Failed to update the item"
+          }
+        }
+      }
+    },
+    "/delete_item/{id}": {
+      "delete": {
+        "tags": [
+          "single"
+        ],
+        "summary": "Delete an item by ID",
+        "description": "Removes an item from the database based on its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the item to delete.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "validItem1": {
+                "summary": "A valid ID for an existing item",
+                "value": "71199b96-b61a-41b7-8e1b-ba6b45cec8ee"
+              },
+              "validItem2": {
+                "summary": "Another valid ID for an existing item",
+                "value": "28f1a1d3-1a3d-4bd6-a0dd-ac4ace84393b"
+              },
+              "edgeCaseItem": {
+                "summary": "And another valid ID for an existing item",
+                "value": "492d4d02-dd5a-4051-a097-eb7017366141"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deleted the item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDeletedWrapper"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Item not found"
+          },
+          "500": {
+            "description": "Failed to delete the item"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ItemDeletedWrapper": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "OK"
+          },
+          "message": {
+            "type": "string",
+            "example": "Item with ID successfully deleted"
+          },
+          "response": {
+            "example": null
+          }
+        }
+      },
+      "ItemUpdatedWrapper": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "OK"
+          },
+          "message": {
+            "type": "string",
+            "example": "Item with ID successfully updated"
+          },
+          "response": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          }
+        }
+      },
+      "ItemAddedWrapper": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "OK"
+          },
+          "message": {
+            "type": "string",
+            "example": "New item successfully added"
+          },
+          "response": {
+            "$ref": "#/components/schemas/ItemAdded"
+          }
+        }
+      },
+      "ItemAdded": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "02ff4abc-1547-4665-95db-93a985987c69"
+          },
+          "item_name": {
+            "type": "string",
+            "example": "Oatmeal"
+          }
+        }
+      },
+      "ItemWrapper": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "OK"
+          },
+          "message": {
+            "type": "string",
+            "example": "Fetched all data from database"
+          },
+          "response": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            }
+          }
+        }
+      },
+      "Item": {
+        "required": [
+          "item_name",
+          "brand",
+          "serving_size",
+          "calories",
+          "total_fat",
+          "saturated_fat",
+          "trans_fat",
+          "cholesterol",
+          "sodium",
+          "protein",
+          "total_carbohydrates",
+          "vitamins_and_minerals",
+          "allergens"
+        ],
+        "type": "object",
+        "properties": {
+          "item_name": {
+            "type": "string",
+            "example": "Oatmeal"
+          },
+          "brand": {
+            "type": "string",
+            "example": "Healtyh Foods"
+          },
+          "serving_size": {
+            "type": "integer",
+            "format": "int32",
+            "example": 100
+          },
+          "calories": {
+            "type": "integer",
+            "format": "int32",
+            "example": 150
+          },
+          "total_fat": {
+            "type": "integer",
+            "format": "int32",
+            "example": 3
+          },
+          "saturated_fat": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "trans_fat": {
+            "type": "integer",
+            "format": "int32",
+            "example": 0
+          },
+          "cholesterol": {
+            "type": "integer",
+            "format": "int32",
+            "example": 0
+          },
+          "sodium": {
+            "type": "integer",
+            "format": "int32",
+            "example": 50
+          },
+          "protein": {
+            "type": "integer",
+            "format": "int32",
+            "example": 5
+          },
+          "total_carbohydrates": {
+            "$ref": "#/components/schemas/TotalCarbohydrates"
+          },
+          "vitamins_and_minerals": {
+            "$ref": "#/components/schemas/VitaminsAndMinerals"
+          },
+          "allergens": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "type": "string",
+              "xml": {
+                "name": "allergen"
+              }
+            }
+          }
+        },
+        "xml": {
+          "name": "item"
+        }
+      },
+      "TotalCarbohydrates": {
+        "required": [
+          "total",
+          "dietary_fiber",
+          "sugars",
+          "added_sugars"
+        ],
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32",
+            "example": 25
+          },
+          "dietary_fiber": {
+            "type": "integer",
+            "format": "int32",
+            "example": 4
+          },
+          "sugars": {
+            "type": "integer",
+            "format": "int32",
+            "example": 8
+          },
+          "added_sugars": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          }
+        }
+      },
+      "VitaminsAndMinerals": {
+        "required": [
+          "vitamin_a",
+          "vitamin_c",
+          "calcium",
+          "iron"
+        ],
+        "type": "object",
+        "properties": {
+          "vitamin_a": {
+            "type": "integer",
+            "format": "int32",
+            "example": 10
+          },
+          "vitamin_c": {
+            "type": "integer",
+            "format": "int32",
+            "example": 5
+          },
+          "calcium": {
+            "type": "integer",
+            "format": "int32",
+            "example": 50
+          },
+          "iron": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          }
+        }
+      }
+    }
+  }
+}

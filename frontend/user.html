@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NIRP - User</title>
+    <meta
+      name="description"
+      content="Ovaj skup podataka sadrži nutritivne
+    informacije o raznim prehrambenim proizvodima, uključujući voće, povrće,
+    žitarice, meso, mliječne proizvode i prerađene namirnice." />
+    <meta
+      name="keywords"
+      content="nutritivne informacije, prehrambeni proizvodi, nirp" />
+    <meta name="author" content="Marko Pavlaković" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 8px;
+          padding: 24px;
+          box-sizing: border-box;
+        ">
+        <a class="button-secondary" href="/"> Natrag </a>
+        <a class="button-secondary" href="/logout"> Odjava </a>
+      </div>
+
+      <h1>Korisnički profil</h1>
+
+      <div
+        id="profilJson"
+        style="
+          margin-top: 64px;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          justify-content: end;
+          align-items: center;
+          padding: 36px;
+          gap: 36px;
+          box-sizing: border-box;
+          border: 2px solid hsl(0, 0%, 20%);
+          border-radius: 16px;
+        ">
+        <div
+          id="user-picture"
+          style="
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            background-color: hsl(0, 0%, 20%);
+          "></div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <p style="color: hsl(0, 0%, 60%)">Name</p>
+            <p id="user-name">...</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <p style="color: hsl(0, 0%, 60%)">Email</p>
+            <p id="user-email">...</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <p style="color: hsl(0, 0%, 60%)">Email Verified</p>
+            <p id="user-email-verified">...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script lang="ts">
+      window.onload = async () => {
+        try {
+          const userPicture = document.getElementById("user-picture");
+          const userName = document.getElementById("user-name");
+          const userEmail = document.getElementById("user-email");
+          const userEmailVerified = document.getElementById(
+            "user-email-verified"
+          );
+          const authStatus = await isAuthenticated();
+
+          console.log(authStatus);
+
+          userPicture.style.background = `url(${authStatus.user.picture}) no-repeat center center`;
+          userPicture.style.backgroundColor = "hsl(0, 0%, 20%)";
+          userPicture.style.backgroundSize = "cover";
+          userName.innerText = authStatus.user.name;
+          userEmail.innerText = authStatus.user.email;
+          userEmailVerified.innerText = authStatus.user.email_verified;
+        } catch (error) {
+          console.log("Error checking authentication:", error);
+        }
+      };
+
+      async function isAuthenticated() {
+        const result = await fetch("/api/v1/user");
+
+        if (!result.ok) {
+          throw new Error(`Failed to fetch user: ${response.statusText}`);
+        }
+
+        const data = await result.json();
+
+        return data;
+      }
+    </script>
+  </body>
+</html>

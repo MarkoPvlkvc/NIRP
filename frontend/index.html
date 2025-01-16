@@ -34,11 +34,27 @@
           padding: 24px;
           box-sizing: border-box;
         ">
+        <a id="login-button" class="button-secondary" href="/login">
+          Prijava
+        </a>
+        <a
+          style="display: none"
+          class="button-secondary needs-auth"
+          href="/user">
+          Korisnički profil
+        </a>
         <button
-          class="button-secondary"
-          onclick="window.location.href='/database'">
-          Pregled Baze
+          style="display: none"
+          class="button-secondary needs-auth"
+          onclick="downloadJSON();">
+          Osvježi preslike
         </button>
+        <a
+          style="display: none"
+          class="button-secondary needs-auth"
+          href="/database">
+          Pregled Baze
+        </a>
         <button
           class="button-primary"
           onclick="document.getElementById('download-section').scrollIntoView({ behavior: 'smooth' });">
@@ -247,5 +263,174 @@
         </p>
       </div>
     </div>
+
+    <script lang="ts">
+      window.onload = async () => {
+        try {
+          const needsAuthElements = document.querySelectorAll(".needs-auth");
+          const loginButton = document.getElementById("login-button");
+          const authStatus = await isAuthenticated();
+
+          if (authStatus.isAuthenticated) {
+            needsAuthElements.forEach((element) => {
+              element.style.display = "block";
+            });
+
+            loginButton.style.display = "none";
+          } else {
+            needsAuthElements.forEach((element) => {
+              element.style.display = "none";
+            });
+
+            loginButton.style.display = "block";
+          }
+        } catch (error) {
+          console.log("Error checking authentication:", error);
+        }
+      };
+
+      async function isAuthenticated() {
+        const result = await fetch("/api/v1/user");
+
+        if (!result.ok) {
+          throw new Error(`Failed to fetch user: ${response.statusText}`);
+        }
+
+        const data = await result.json();
+
+        return data;
+      }
+
+      async function downloadJSON() {
+        try {
+          const response = await fetch("/api/v1/get_items");
+          const data = await response.json();
+
+          if (data && data.response && Array.isArray(data.response)) {
+            const jsonBlob = new Blob(
+              [JSON.stringify(data.response, null, 2)],
+              {
+                type: "application/json",
+              }
+            );
+            const csv = convertToCSV(data.response);
+            const csvBlob = new Blob([csv], { type: "text/csv" });
+
+            const linkJSON = document.createElement("a");
+            linkJSON.href = URL.createObjectURL(jsonBlob);
+            linkJSON.download = "NIRP.json";
+            linkJSON.click();
+
+            const linkCSV = document.createElement("a");
+            linkCSV.href = URL.createObjectURL(csvBlob);
+            linkCSV.download = "NIRP.csv";
+            linkCSV.click();
+          } else {
+            alert("Invalid data format received.");
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          alert("Failed to fetch data.");
+        }
+      }
+
+      function convertToCSV(jsonData) {
+        const headers = [
+          "id",
+          "item_name",
+          "brand",
+          "serving_size",
+          "calories",
+          "total_fat",
+          "saturated_fat",
+          "trans_fat",
+          "cholesterol",
+          "sodium",
+          "total_carbohydrates_total",
+          "total_carbohydrates_dietary_fiber",
+          "total_carbohydrates_sugars",
+          "total_carbohydrates_added_sugars",
+          "protein",
+          "vitamins_and_minerals_vitamin_a",
+          "vitamins_and_minerals_vitamin_c",
+          "vitamins_and_minerals_calcium",
+          "vitamins_and_minerals_iron",
+          "allergens",
+        ];
+
+        const csvRows = [];
+        csvRows.push(headers.join(","));
+
+        jsonData.forEach((row) => {
+          const values = headers.map((header) => {
+            let value = row[header];
+
+            // Flatten the 'total_carbohydrates' object
+            if (
+              header === "total_carbohydrates_total" &&
+              row.total_carbohydrates &&
+              typeof row.total_carbohydrates === "object"
+            ) {
+              value = row.total_carbohydrates.total || "";
+            } else if (
+              header === "total_carbohydrates_dietary_fiber" &&
+              row.total_carbohydrates &&
+              typeof row.total_carbohydrates === "object"
+            ) {
+              value = row.total_carbohydrates.dietary_fiber || "";
+            } else if (
+              header === "total_carbohydrates_sugars" &&
+              row.total_carbohydrates &&
+              typeof row.total_carbohydrates === "object"
+            ) {
+              value = row.total_carbohydrates.sugars || "";
+            } else if (
+              header === "total_carbohydrates_added_sugars" &&
+              row.total_carbohydrates &&
+              typeof row.total_carbohydrates === "object"
+            ) {
+              value = row.total_carbohydrates.added_sugars || "";
+            }
+
+            // Flatten the 'vitamins_and_minerals' object
+            if (
+              header === "vitamins_and_minerals_vitamin_a" &&
+              row.vitamins_and_minerals &&
+              typeof row.vitamins_and_minerals === "object"
+            ) {
+              value = row.vitamins_and_minerals.vitamin_a || "";
+            } else if (
+              header === "vitamins_and_minerals_vitamin_c" &&
+              row.vitamins_and_minerals &&
+              typeof row.vitamins_and_minerals === "object"
+            ) {
+              value = row.vitamins_and_minerals.vitamin_c || "";
+            } else if (
+              header === "vitamins_and_minerals_calcium" &&
+              row.vitamins_and_minerals &&
+              typeof row.vitamins_and_minerals === "object"
+            ) {
+              value = row.vitamins_and_minerals.calcium || "";
+            } else if (
+              header === "vitamins_and_minerals_iron" &&
+              row.vitamins_and_minerals &&
+              typeof row.vitamins_and_minerals === "object"
+            ) {
+              value = row.vitamins_and_minerals.iron || "";
+            }
+
+            if (header === "allergens" && Array.isArray(value)) {
+              value = value.filter(Boolean).join("; ");
+            }
+
+            return `"${String(value).replace(/"/g, '""')}"`;
+          });
+
+          csvRows.push(values.join(","));
+        });
+
+        return csvRows.join("\n");
+      }
+    </script>
   </body>
 </html>

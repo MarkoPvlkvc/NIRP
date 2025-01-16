@@ -2,12 +2,13 @@ import express, { response } from "express";
 import path from "path";
 import { Pool } from "pg";
 import dotenv from "dotenv";
+import { auth as authOIDC, requiresAuth } from "express-openid-connect";
 
 const SERVER_PORT = 3000;
 
 dotenv.config();
-
 const app = express();
+
 app.use(express.static(path.join(__dirname, "../../frontend")));
 app.use(express.json());
 
@@ -19,16 +20,49 @@ const pool = new Pool({
   port: 5432,
 });
 
+const config = {
+  authRequired: false,
+  auth0Logout: false,
+  secret: process.env.AUTH0_SECRET,
+  baseURL: "http://localhost:3000",
+  clientID: process.env.AUTH0_CLIENT_ID,
+  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
+};
+
+app.use(authOIDC(config));
+
 app.get("/", (req, res) => {
   res.sendFile("index.html", {
     root: path.join(__dirname, "../../frontend"),
   });
 });
 
-app.get("/database", (req, res) => {
+app.get("/database", requiresAuth(), (req, res) => {
+  if (!req.oidc.isAuthenticated()) {
+    return;
+  }
+
   res.sendFile("database.html", {
     root: path.join(__dirname, "../../frontend"),
   });
+});
+
+app.get("/user", requiresAuth(), (req, res) => {
+  if (!req.oidc.isAuthenticated()) {
+    return;
+  }
+
+  res.sendFile("user.html", {
+    root: path.join(__dirname, "../../frontend"),
+  });
+});
+
+app.get("/api/v1/user", (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    res.json({ isAuthenticated: true, user: req.oidc.user });
+  } else {
+    res.json({ isAuthenticated: false });
+  }
 });
 
 // Serve OpenAPI specification
@@ -86,10 +120,32 @@ app.get("/api/v1/get_items", async (req, res) => {
       });
     }
 
+    const jsonldResponse = result.rows[0].data.map((item: any) => ({
+      "@context": "https://schema.org",
+      "@type": "FoodProduct",
+      id: item.id,
+      name: item.item_name,
+      brand: {
+        "@type": "Brand",
+        name: item.brand || "Unknown",
+      },
+      serving_size: item.serving_size,
+      calories: item.calories,
+      total_fat: item.total_fat,
+      saturated_fat: item.saturated_fat,
+      trans_fat: item.trans_fat,
+      cholesterol: item.cholesterol,
+      sodium: item.sodium,
+      total_carbohydrates: item.total_carbohydrates,
+      protein: item.protein,
+      vitamins_and_minerals: item.vitamins_and_minerals,
+      allergens: item.allergens,
+    }));
+
     res.status(200).json({
       status: "OK",
       message: "Fetched all data from database.",
-      response: result.rows[0].data,
+      response: jsonldResponse,
     });
   } catch (error) {
     console.log("Error querying database: ", error);
@@ -155,10 +211,32 @@ app.get("/api/v1/get_items/:id", async (req, res) => {
       });
     }
 
+    const jsonldResponse = result.rows[0].data.map((item: any) => ({
+      "@context": "https://schema.org",
+      "@type": "FoodProduct",
+      id: item.id,
+      name: item.item_name,
+      brand: {
+        "@type": "Brand",
+        name: item.brand || "Unknown",
+      },
+      serving_size: item.serving_size,
+      calories: item.calories,
+      total_fat: item.total_fat,
+      saturated_fat: item.saturated_fat,
+      trans_fat: item.trans_fat,
+      cholesterol: item.cholesterol,
+      sodium: item.sodium,
+      total_carbohydrates: item.total_carbohydrates,
+      protein: item.protein,
+      vitamins_and_minerals: item.vitamins_and_minerals,
+      allergens: item.allergens,
+    }));
+
     res.json({
       status: "OK",
       message: "Fetched item from database with specified id.",
-      response: result.rows[0].data,
+      response: jsonldResponse,
     });
   } catch (error) {
     console.log("Error querying database: ", error);

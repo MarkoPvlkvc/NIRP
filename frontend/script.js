@@ -15,9 +15,9 @@ window.onload = async () => {
     } style="max-width: 8ch; white-space: nowrap; cursor: pointer; overflow: hidden; text-overflow: ellipsis;">${
       row.id
     }</td>
-      <td>${row.item_name}</td>
+      <td>${row.name}</td>
       <td style="${row.brand == null ? "color: hsl(0, 0%, 40%)" : ""}">${
-      row.brand == null ? "null" : row.brand
+      row.brand && row.brand.name == "Unknown" ? "null" : row.brand.name
     }</td>
       <td>${row.serving_size}</td>
       <td>${row.calories}</td>

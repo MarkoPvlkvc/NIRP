@@ -8,15 +8,24 @@ Ovaj skup podataka sadrži nutritivne informacije o raznim prehrambenim proizvod
 
 ## Početak rada
 
-Prvo je potrebno pokrenuti Docker kontejner:
+`01` Postavljanje `.env` varijabli:
+
+U projektu se nalazi `.env.example` datoteka koja sadrži varijable koje su potrebne. Datoteku je potrebno `preimenovati u .env` i `zamijeniti placeholder vrijednosti` varijabli. Vrijednosti za varijable moguće je pronaći na [Auth0](https://auth0.com/) dashboardu pod sekcijom "Applications". Biti će potrebno izraditi novu aplikaciju tipa `"Regular Web Applications"`.
+
+<br>
+
+`02` Pokretanje Docker kontejnera:
 
 ```bash
 docker compose up
 ```
 
 Nakon toga je moguće pokrenuti `dobij_json.bat` i/ili `dobij_csv.bat`. Čime će se stvoriti nove datoteke `NIRP.json` i `NIRP.csv`.
-<br><br>
+
+<br>
+
 Isto tako, moguće je pregledati podatke skupa na: [`http://localhost:3000`](http://localhost:3000)
+<br>Biti će potrebna prijava, korisnik se može kreirati na [Auth0](https://auth0.com/) dashboardu pod sekcijom "User Management" > "Users".
 
 <br>
 
